@@ -20,6 +20,8 @@ option(USE_GLIB "Use GLIB functions" FALSE)
 option(CFG_USE_PKGCONFIG "Use pkg-config for discovering install target directory for systemd and udev files." OFF)
 # Build GPT listener
 option(BUILD_GPT_LISTENER "Build GPT Listener" TRUE)
+# Build RPMB listener
+option(BUILD_RPMB_LISTENER "Build RPMB Listener" TRUE)
 
 include(GNUInstallDirs)
 
@@ -65,4 +67,8 @@ endif()
 
 if(BUILD_GPT_LISTENER)
 	add_subdirectory(listeners/libgptservice)
+endif()
+
+if(BUILD_RPMB_LISTENER)
+	add_subdirectory(listeners/librpmbservice)
 endif()
