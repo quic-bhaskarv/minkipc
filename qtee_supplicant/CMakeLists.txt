@@ -39,6 +39,11 @@ if(BUILD_GPT_LISTENER)
 		PRIVATE -DGPT_LISTENER)
 endif()
 
+if(BUILD_RPMB_LISTENER)
+	target_compile_definitions(${PROJECT_NAME}
+		PRIVATE -DRPMB_LISTENER)
+endif()
+
 # ''Headers and dependencies''.
 
 target_link_libraries(${PROJECT_NAME}
